@@ -52,9 +52,8 @@ The allocator requests a contiguous memory region from the operating system usin
 
 Each block in the heap has the following layout:
 
-+----------------+----------------------+----------------+
 | Header         | User Payload         | Footer         |
-+----------------+----------------------+----------------+
+
 
 # Header
 
@@ -107,15 +106,13 @@ When a free block is significantly larger than the requested allocation, it is d
 
 Before:
 
-+---------------------------------------------+
 |              Large Free Block               |
-+---------------------------------------------+
+
 
 After:
 
-+-------------+-------------------------------+
 | Allocated   | Remaining Free Block          |
-+-------------+-------------------------------+
+
 
 The remaining free block receives:
 
@@ -143,15 +140,13 @@ Fragmentation causes adjacent free blocks to accumulate over time.
 
 Example:
 
-+------+------+
 |Free  |Free  |
-+------+------+
+
 
 After coalescing:
 
-+-------------+
 | Larger Free |
-+-------------+
+
 
 
 The allocator performs:
@@ -187,17 +182,6 @@ The allocator tracks:
 * Peak allocated memory
 
 These counters help understand allocator behavior and fragmentation patterns.
-
-Example output:
-
-==== allocator stats ====
-alloc calls: 3
-free calls: 3
-splits: 3
-coalesces: 3
-bytes requested: 160
-peak bytes in use: 160
-=========================
 
 
 # Demonstration Tests
