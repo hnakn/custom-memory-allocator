@@ -26,7 +26,7 @@ A custom user-space memory allocator implemented in C for Linux using mmap(). Th
         │     Custom Memory Allocator │
         └──────────────┬──────────────┘
                        │
-                  mmap() / munmap()
+                     mmap()
                        │
                  Linux Kernel
                  
