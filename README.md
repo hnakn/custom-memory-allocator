@@ -29,6 +29,7 @@ A custom user-space memory allocator implemented in C for Linux using mmap(). Th
                      mmap()
                        │
                  Linux Kernel
+
                  
 
 # Motivation
@@ -46,6 +47,7 @@ This project was built to explore:
 
 
 The allocator requests a contiguous memory region from the operating system using `mmap()` and manages allocations entirely within that region.
+
 
 
 # Heap Layout
@@ -81,6 +83,7 @@ size_t size
 The footer duplicates the payload size stored in the header.
 
 Boundary tags allow the allocator to locate the previous physical block in **O(1)** time, enabling efficient backward coalescing.
+
 
 
 # Allocation Algorithm
@@ -237,7 +240,6 @@ Through this project I gained practical experience with:
 * Designing memory management data structures
 * Managing heap metadata
 * Implementing allocation and deallocation algorithms
-* Working directly with Linux virtual memory APIs
 * Reasoning about memory layout and pointer arithmetic
 * Understanding fragmentation and allocator design trade-offs
 
